@@ -1,0 +1,63 @@
+
+.table-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.calendar-view {
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #007bff; /* Adjust color as needed */
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background-color: #f8f9fa; /* Adjust color as needed */
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6; /* Adjust color as needed */
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6; /* Adjust color as needed */
+}
+
+.location-button {
+  padding: 5px 10px;
+  background-color: #007bff; /* Adjust color as needed */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.location-button:hover {
+  background-color: #0056b3; /* Adjust color as needed */
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #007bff; /* Adjust color as needed */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #ced4da; /* Adjust color as needed */
+  cursor: not-allowed;
+}
