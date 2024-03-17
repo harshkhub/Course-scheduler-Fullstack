@@ -7,14 +7,15 @@
   }
   
   .home-container h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
+    margin-top: 100px;
   }
   
   .button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: #007bff; /* Adjust color as needed */
+    background-color: #990000; /* Adjust color as needed */
     color: #fff;
     text-decoration: none;
     border: none;
@@ -25,5 +26,13 @@
   }
   
   .button:hover {
-    background-color: #0056b3; /* Adjust color as needed */
+    background-color: #FFC72C; /* Adjust color as needed */
   }
+
+  .video-element {
+    width: 100%;
+    max-width: 700px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 20px; /* Add some spacing */
+    margin-top: 10px;
+}

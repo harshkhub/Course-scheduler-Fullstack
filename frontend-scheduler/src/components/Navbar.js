@@ -1,5 +1,6 @@
 import './Navbar.css';
 import USC from '../assets/USC.png';
+import logotext from '../assets/logotext.png'
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Search from './Search';
@@ -16,6 +17,7 @@ const Navbar = () =>{
             <nav className='navbar'>
                 <a href='/' className='logo'>
                     <img src={USC} alt='logo'/>
+                    <img className='title-logo' src={logotext} alt='Class scheduler' />
                 </a>
                 <div className='hamburger' onClick ={handleClick}>
                 {click ? (<FaTimes size={30} style={{ color: '#ffffff' }} />)
