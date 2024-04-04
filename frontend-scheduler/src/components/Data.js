@@ -34,6 +34,8 @@ const Data = () =>{
 
    useEffect(() =>{
 
+    const storedExams = JSON.parse(localStorage.getItem('calendar')) || [];
+    setCalendarCourses(storedExams);
     const getCourses = async (searchQuery) =>{
         
         try{
@@ -74,7 +76,7 @@ const Data = () =>{
         getCourses(courseNum);
     }
 
-    console.log(localStorage.getItem('calendar').length);
+    
 
 
 
@@ -84,6 +86,9 @@ const Data = () =>{
 
    const handleAddtolist = (course) =>{
 
+    const alreadyExists = calendarCourses.some((calendarCourses) => calendarCourses.sectionNum == course.sectionNum);
+
+    if(!alreadyExists){
     setCalendarCourses((prevCourses) => {
         const calendarNew = [...prevCourses, course];
         setSelection((prevAdded) => new Set([...prevAdded, course.courseKey]));
@@ -91,7 +96,7 @@ const Data = () =>{
         return calendarNew;
     });
 
-    
+    }
   
     
    }
@@ -103,6 +108,14 @@ const Data = () =>{
         return newCourse;
     }))
 
+   }
+
+   const checkLocal = (course) =>{
+    const itemList = JSON.parse(localStorage.getItem('calendar')) || [];
+
+    const itemExists = itemList.some(courseArray => JSON.stringify(courseArray) == JSON.stringify(course));
+
+    return itemExists;
    }
 
    const generateMapUrl = (roomName) =>{
@@ -121,8 +134,9 @@ const Data = () =>{
         
         <div className='table-container'>
             
-            <Link to='/calendar' className='calendar-view'> View calendar</Link>
-            <button onClick={handleGoButtonClick} className='section-btn'>Search</button>
+         {/*   <button className='section-btn'>
+                <Link to='/search'>Search again</Link>
+    </button>*/}
             {courses.length === 0 ? (<h1>No classes found for the given search. Please search again!</h1>): 
             <table>
                 <thead>
@@ -155,10 +169,10 @@ const Data = () =>{
                             : <span>Room not announced</span>}
                             <td>
                             {course.startTime !== "TBA" ?
-                            (<button onClick={() => handleAddtolist(course)} disabled={selectedcourse.has(course.courseKey)}>
+                            (<button onClick={() => handleAddtolist(course)} disabled={checkLocal(course)}>
                                 <span class="shadow"></span>
                                 <span class="edge"></span>
-                                <span class="front text">{selectedcourse.has(course.courseKey) ? 'Added' : 'Add To Calendar'}</span>
+                                <span class="front text">{(checkLocal(course)) ? 'Added' : 'Add To Calendar'}</span>
                             </button>)
                             : (<span>Time not announced yet</span>)}
                             </td>
@@ -169,14 +183,17 @@ const Data = () =>{
             </table>}
             <div className='search-more'>
             <h1>Course not showing up? Make the search more specific by adding your section number!</h1>
-                <input
+            <button className='section-btn'>
+                <Link to='/search'>Search again</Link>
+            </button>
+              {/*}  <input
                     type='text'
                     placeholder='Search for more classes...'
                     value={searchQuery}
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                     />
-                <button onClick={handleGoButtonClick}>Search</button>
+                    <button onClick={handleGoButtonClick}>Search</button>*/}
             </div>
 
         </div>

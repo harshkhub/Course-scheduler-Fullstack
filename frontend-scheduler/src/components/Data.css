@@ -2,14 +2,14 @@
 .table-container {
   width: 90%;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .calendar-view {
   display: block;
   margin-bottom: 20px;
   text-align: center;
-  color: #007bff; /* Adjust color as needed */
+  color:  #990000; /* Adjust color as needed */
   text-decoration: none;
   font-size: 1.2rem;
 }
@@ -33,7 +33,7 @@ tbody td {
 
 .location-button {
   padding: 5px 10px;
-  background-color: #007bff; /* Adjust color as needed */
+  background-color:  #990000; /* Adjust color as needed */
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -43,21 +43,27 @@ tbody td {
 }
 
 .location-button:hover {
-  background-color: #0056b3; /* Adjust color as needed */
+  background-color:  #990000; /* Adjust color as needed */
 }
 
 button {
   padding: 5px 10px;
-  background-color: #007bff; /* Adjust color as needed */
+  background-color:  #990000; /* Adjust color as needed */
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
 button:disabled {
-  background-color: #ced4da; /* Adjust color as needed */
+  background-color: #FFC72C; /* Adjust color as needed */
   cursor: not-allowed;
+}
+
+.section-btn a{
+  text-decoration: none;
+  color: inherit;
 }

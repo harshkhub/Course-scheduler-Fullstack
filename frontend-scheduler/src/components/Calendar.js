@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import './Calendar.css'
+import download from '../assets/download.png'
+import { Link } from 'react-router-dom'
 
 const Calendar = () =>{
 
@@ -10,7 +12,7 @@ const Calendar = () =>{
 
         const calendar = JSON.parse(localStorage.getItem('calendar'));
 
-        SetCourses(calendar || []);
+        SetCourses(calendar);
         setHasItems(calendar && calendar.length > 0);
     })
 
@@ -142,7 +144,13 @@ const Calendar = () =>{
 
     return(
         <div className='table-container'>
-            {calendarCourses.length === 0 ? <h1>No courses added yet, search for classes!</h1> :
+            {calendarCourses.length === 0 ? 
+            <div>
+            <h1>No courses added yet, search for classes!</h1>
+            <button className='section-btn'>
+                <Link to='/search'>Search</Link>
+            </button> 
+            </div>:
             <table>
                 <thead>
                     <tr>
@@ -171,15 +179,19 @@ const Calendar = () =>{
                             <td>{course.instructorName}</td>
                             <td>{course.room} </td>
                             <td>
-                            <button onClick={() =>handleRemove(course.courseKey)}>Remove</button>
-                            <button onClick={() =>handleGoogle(course)}>Add to google calendar</button>
+                            <div className='buttons'>
+                                <button onClick={() =>handleRemove(course.courseKey)}>Remove</button>
+                                <button onClick={() =>handleGoogle(course)} className='google-button'>
+                                    <img src={download} alt='google logo' className='google-logo'/>
+                                </button>
+                            </div>
                             </td>
                         </tr>
                     ))}
                 </tbody>
 
             </table>}
-            {hasitems && <button onClick={generateCalendarFile} >Download calendar</button>}
+            {hasitems && <button onClick={generateCalendarFile} >Export calendar</button>}
         </div>
 )}
 

@@ -1,0 +1,30 @@
+.table-container h1{
+    align-items: center;
+    margin-top: 300px;
+}
+
+.buttons{
+    justify-content: center;
+    display: flex;
+    
+}
+
+.buttons button{
+    margin-right: 10px;
+}
+
+.google-button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .google-logo {
+    width: 40px; /* Adjust the width and height as needed */
+    height: 40px;
+     /* Add spacing between the logo and the text */
+  }
