@@ -20,7 +20,7 @@ const Home = () => {
 
     return(
         <div className='home-container'>
-            <h1>Schedule your USC classes in seconds!</h1>
+            <h1>Calendarize your USC classes in seconds!</h1>
             <h2>Our web app supports the Marshall school of business for Fall 2024!</h2>
             <Link to='/search' className='button'>Get started</Link>
             <video ref={videoRef} autoPlay loop muted className='video-element'>

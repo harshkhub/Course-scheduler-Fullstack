@@ -11,7 +11,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping(path = "api/course")
-@CrossOrigin(origins = "http://localhost:3001")
+@CrossOrigin(origins = "http://schedulerfrontend.s3-website.us-east-2.amazonaws.com")
 public class courseController {
 
     @Autowired

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 const Data = () =>{
 
    const[courses, setCourses] = useState([]);
-   const[selectedcourse, setSelection] = useState(new Set());
    const[calendarCourses, setCalendarCourses] = useState([]);
    const[searchQuery, setQuery] = useState("");
    const[hasTime, setHasTime] = useState(false)
@@ -91,7 +90,6 @@ const Data = () =>{
     if(!alreadyExists){
     setCalendarCourses((prevCourses) => {
         const calendarNew = [...prevCourses, course];
-        setSelection((prevAdded) => new Set([...prevAdded, course.courseKey]));
         localStorage.setItem('calendar', JSON.stringify(calendarNew));
         return calendarNew;
     });
@@ -101,14 +99,6 @@ const Data = () =>{
     
    }
 
-   const handleRemove = (course) =>{
-    setSelection(((prevAdded) => {
-        const newCourse = new Set(prevAdded);
-        newCourse.delete(course.sectionNum);
-        return newCourse;
-    }))
-
-   }
 
    const checkLocal = (course) =>{
     const itemList = JSON.parse(localStorage.getItem('calendar')) || [];

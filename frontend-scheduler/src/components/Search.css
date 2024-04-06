@@ -14,7 +14,7 @@
 .search h3{
   text-align: left;
   align-items: flex-start;
-  font-weight: normal;
+  font-weight: 100;
 }
   
   .search input[type="text"] {

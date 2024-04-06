@@ -20,8 +20,8 @@ const Navbar = () =>{
                     <img className='title-logo' src={logotext} alt='Class scheduler' />
                 </a>
                 <div className='hamburger' onClick ={handleClick}>
-                {click ? (<FaTimes size={30} style={{ color: '#ffffff' }} />)
-                        : (<FaBars size={30} style={{ color: '#ffffff' }} />)}
+                {click ? (<FaTimes size={30} style={{ color: '#990000' }} />)
+                        : (<FaBars size={30} style={{ color: '#990000' }} />)}
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className='nav-item'>

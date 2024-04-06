@@ -12,6 +12,7 @@ public class CorsConfig implements WebMvcConfigurer{
     public void addCorsMappings(CorsRegistry cors){
         cors.addMapping("/api***")
                 .allowedOrigins("http://localhost:3001")
+                .allowedOrigins("http://schedulerfrontend.s3-website.us-east-2.amazonaws.com")
                 .allowedMethods("GET")
                 .allowedHeaders("*");
     }
